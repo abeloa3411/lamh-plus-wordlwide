@@ -14,19 +14,18 @@ export async function createOder(req, res) {
   const {
     name,
     email,
-    orderNo,
-    orderDate,
+    origin,
+    destination,
     cost,
     chargeableWeight,
     dimensions,
     merchant,
-    cargoType,
-    origin,
-    state,
-    currentLocation,
-    descriptoin,
+    orderDate,
     deliveryDate,
-    destination,
+    description,
+    shipper,
+    recipient,
+    sale,
   } = req.body;
 
   try {
@@ -39,12 +38,12 @@ export async function createOder(req, res) {
       merchant,
       origin,
       destination,
-      cargoType,
+      shipper,
+      recipient,
       orderDate,
       deliveryDate,
-      descriptoin,
-      currentLocation,
-      state,
+      description,
+      sale,
     });
 
     const isSaved = await newOrder.save();

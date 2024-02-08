@@ -248,27 +248,21 @@
                   <div class="col">
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Full Name</label>
-                      <input type="text" class="form-control" />
+                      <input type="text" id="name" class="form-control" />
                     </div>
                   </div>
                   <div class="col">
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Email</label>
-                      <input type="text" class="form-control" />
+                      <input type="text" id="email" class="form-control" />
                     </div>
                   </div>
                 </div>
                 <div class="row input-group input-group-outline mb-3">
                   <div class="col">
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Order number</label>
-                      <input type="number" class="form-control" />
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Country of Origin</label>
-                      <input type="text" class="form-control" />
+                      <input type="text" id="origin" class="form-control" />
                     </div>
                   </div>
                 </div>
@@ -276,13 +270,17 @@
                   <div class="col">
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Destination</label>
-                      <input type="text" class="form-control" />
+                      <input
+                        type="text"
+                        id="destination"
+                        class="form-control"
+                      />
                     </div>
                   </div>
                   <div class="col">
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Dimensions</label>
-                      <input type="text" class="form-control" />
+                      <input type="text" id="dimensions" class="form-control" />
                     </div>
                   </div>
                 </div>
@@ -290,13 +288,13 @@
                   <div class="col">
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Cost</label>
-                      <input type="text" class="form-control" />
+                      <input type="text" id="cost" class="form-control" />
                     </div>
                   </div>
                   <div class="col">
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Sale</label>
-                      <input type="text" class="form-control" />
+                      <input type="text" id="sale" class="form-control" />
                     </div>
                   </div>
                 </div>
@@ -304,13 +302,17 @@
                   <div class="col">
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Chargeable weight</label>
-                      <input type="text" class="form-control" />
+                      <input
+                        type="text"
+                        id="chargeable-weight"
+                        class="form-control"
+                      />
                     </div>
                   </div>
                   <div class="col">
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Merchant</label>
-                      <input type="text" class="form-control" />
+                      <input type="text" id="merchant" class="form-control" />
                     </div>
                   </div>
                 </div>
@@ -319,13 +321,21 @@
                   <div class="col">
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Date of Order</label>
-                      <input type="date" class="form-control" />
+                      <input
+                        type="date"
+                        id="date-of-order"
+                        class="form-control"
+                      />
                     </div>
                   </div>
                   <div class="col">
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">date of delivery</label>
-                      <input type="date" class="form-control" />
+                      <input
+                        type="date"
+                        id="date-of-delivery"
+                        class="form-control"
+                      />
                     </div>
                   </div>
                 </div>
@@ -334,6 +344,7 @@
                   <textarea
                     class="form-control"
                     aria-label="With textarea"
+                    id="description"
                   ></textarea>
                 </div>
 
@@ -348,13 +359,21 @@
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
                           <label class="form-label">Shippers Name</label>
-                          <input type="text" class="form-control" />
+                          <input
+                            type="text"
+                            id="shippers-name"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
                           <label class="form-label">Shippes Company</label>
-                          <input type="text" class="form-control" />
+                          <input
+                            type="text"
+                            id="shippers-company"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                     </div>
@@ -362,13 +381,21 @@
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
                           <label class="form-label"> Shippers Phone no.</label>
-                          <input type="text" class="form-control" />
+                          <input
+                            type="text"
+                            id="shippers-phone"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Address 1</label>
-                          <input type="text" class="form-control" />
+                          <label class="form-label">Address</label>
+                          <input
+                            type="text"
+                            id="shippers-address"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                     </div>
@@ -376,43 +403,44 @@
                     <div class="row input-group input-group-outline mb-3">
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Address 2</label>
-                          <input type="text" class="form-control" />
+                          <label class="form-label">Shippers city</label>
+                          <input
+                            type="text"
+                            id="shippers-city"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
                           <label class="form-label">Zip code</label>
-                          <input type="text" class="form-control" />
+                          <input
+                            type="text"
+                            id="shippers-zip-code"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                     </div>
-                    <div class="row input-group input-group-outline mb-3">
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Shippers Slate </label>
-                          <input type="text" class="form-control" />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Shippers city</label>
-                          <input type="text" class="form-control" />
-                        </div>
-                      </div>
-                    </div>
-
                     <div class="row input-group input-group-outline mb-3">
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
                           <label class="form-label">Shippers Country</label>
-                          <input type="text" class="form-control" />
+                          <input
+                            type="text"
+                            id="shippers-country"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
                           <label class="form-label">Shippers email</label>
-                          <input type="text" class="form-control" />
+                          <input
+                            type="text"
+                            id="shippers email"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                     </div>
@@ -431,13 +459,22 @@
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
                           <label class="form-label">Recipient Name</label>
-                          <input type="text" class="form-control" />
+                          <input
+                            type="text"
+                            id="recipient-name"
+                            class="form-control"
+                            required="true"
+                          />
                         </div>
                       </div>
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
                           <label class="form-label">Shippes Company</label>
-                          <input type="text" class="form-control" />
+                          <input
+                            type="text"
+                            id="recipient company"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                     </div>
@@ -445,13 +482,21 @@
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
                           <label class="form-label"> Recipient Phone no.</label>
-                          <input type="text" class="form-control" />
+                          <input
+                            type="text"
+                            id="recipient-phone"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
                           <label class="form-label">Address 1</label>
-                          <input type="text" class="form-control" />
+                          <input
+                            type="text"
+                            id="recipient-address"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                     </div>
@@ -459,28 +504,22 @@
                     <div class="row input-group input-group-outline mb-3">
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Address 2</label>
-                          <input type="text" class="form-control" />
+                          <label class="form-label">Recipient city</label>
+                          <input
+                            type="text"
+                            id="recipient-city"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
                           <label class="form-label">Zip code</label>
-                          <input type="text" class="form-control" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row input-group input-group-outline mb-3">
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Recipient Slate </label>
-                          <input type="text" class="form-control" />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Recipient city</label>
-                          <input type="text" class="form-control" />
+                          <input
+                            type="text"
+                            id="recipient-zip-code"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                     </div>
@@ -489,13 +528,21 @@
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
                           <label class="form-label">Recipient Country</label>
-                          <input type="text" class="form-control" />
+                          <input
+                            type="text"
+                            id="recipient-country"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
                           <label class="form-label">Recipient email</label>
-                          <input type="text" class="form-control" />
+                          <input
+                            type="text"
+                            id="recipient-email"
+                            class="form-control"
+                          />
                         </div>
                       </div>
                     </div>
@@ -711,6 +758,7 @@
     <script src="../assets/js/core/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="../assets/js/createOrder.js"></script>
     <script>
       var win = navigator.platform.indexOf("Win") > -1;
       if (win && document.querySelector("#sidenav-scrollbar")) {
