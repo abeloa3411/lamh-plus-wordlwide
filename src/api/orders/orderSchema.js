@@ -19,7 +19,10 @@ const OrderSchema = mongoose.Schema({
   deliveryDate: String,
   descriptoin: String,
   currentLocation: String,
-  state: String,
+  state: {
+    type: String,
+    default: "Not fullfilled",
+  },
 });
 
 const Order = mongoose.model("Order", OrderSchema);
