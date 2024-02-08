@@ -61,6 +61,7 @@ async function createOrder() {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
+          alert("Order Added Successfully");
         });
     } catch (error) {
       console.log(error);

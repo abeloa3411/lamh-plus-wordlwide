@@ -53,3 +53,61 @@ export async function createOder(req, res) {
     res.status(404).json({ message: error.message });
   }
 }
+
+export async function deleteOrder(req, res) {
+  const { id } = req.params;
+  try {
+    await Order.findByIdAndDelete({ _id: id });
+
+    req.status(200).json({ msg: "Deleted" });
+  } catch (error) {
+    res.status(400).json({ err: error.message });
+  }
+}
+
+export async function updateOrder(req, res) {
+  const { id } = req.params;
+
+  const {
+    name,
+    email,
+    origin,
+    destination,
+    cost,
+    chargeableWeight,
+    dimensions,
+    merchant,
+    orderDate,
+    deliveryDate,
+    description,
+    shipper,
+    recipient,
+    sale,
+  } = req.body;
+
+  const data = {
+    name,
+    email,
+    origin,
+    destination,
+    cost,
+    chargeableWeight,
+    dimensions,
+    merchant,
+    orderDate,
+    deliveryDate,
+    description,
+    shipper,
+    recipient,
+    sale,
+  };
+
+  const updated = await Order.updateOne({ _id: id }, { $set: data });
+
+  res.status(200).json(updated);
+
+  try {
+  } catch (error) {
+    res.status(400).json({ err: error.message });
+  }
+}
