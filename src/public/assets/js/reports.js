@@ -12,8 +12,11 @@
           destination,
           orderNo,
           origin,
+          orderDate,
+          deliveryDate,
           cost,
           state,
+          dimensions,
           chargeableWeight,
           merchant,
           description,
@@ -55,12 +58,16 @@
                           <p>${chargeableWeight}</p>
                         </td>
                         <td class="align-middle text-center">
-                          <a class="btn btn-outline-primary">${state}</a>
+                          <p>${state}</p>
                         </td>
                         <td class="align-middle text-center">
-                          <a href="update.html" class="btn btn-outline-primary"
-                            >Edit</a
-                          >
+                          <p>${dimensions}</p>
+                        </td>
+                          <td class="align-middle text-center">
+                          <p>${deliveryDate}</p>
+                        </td>
+                          <td class="align-middle text-center">
+                          <p>${orderDate}</p>
                         </td>
             </tr>
     
@@ -73,3 +80,10 @@
     console.log(error);
   }
 })();
+
+const generateBtn = document.getElementById("generate-btn");
+
+generateBtn.addEventListener("click", () => {
+  var table2excel = new Table2Excel();
+  table2excel.export(document.querySelectorAll("table.table"));
+});
