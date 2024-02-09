@@ -2,7 +2,9 @@
 //get orders
 (async function getOrders() {
   try {
-    const res = await fetch("http://localhost:3000/api/orders");
+    const res = await fetch(
+      "https://lamhplusworldwide.onrender.com/api/orders"
+    );
     const orders = await res.json();
 
     const orderBody = document.getElementById("order-body");

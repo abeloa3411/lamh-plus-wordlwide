@@ -40,7 +40,7 @@ async function createOrder() {
   }
 
   try {
-    await fetch("http://localhost:3000/api/orders", {
+    await fetch("https://lamhplusworldwide.onrender.com/api/orders", {
       method: "post",
       headers: new Headers({ "Content-Type": "application/json" }),
       body: JSON.stringify({
