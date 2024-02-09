@@ -1,19 +1,13 @@
-//api calls
-//get orders
 (async function getOrders() {
   try {
     const res = await fetch("http://localhost:3000/api/orders");
     const orders = await res.json();
 
-    const orderBody = document.getElementById("order-body");
-    const orderCount = document.getElementById("order-count");
-
-    orderCount.innerHTML = orders.length + " orders";
+    const reportBody = document.querySelector(".report-body");
 
     const loadedOrders = orders
       .map((order) => {
         const {
-          _id,
           name,
           destination,
           orderNo,
@@ -25,6 +19,7 @@
           description,
         } = order;
 
+        console.log(order);
         return `
              <tr>
                         <td>
@@ -38,7 +33,7 @@
                         </td>
                         <td>
                           <div class="avatar-group mt-2">
-                            <p>${_id}</p>
+                            <p>${orderNo}</p>
                           </div>
                         </td>
                         <td class="align-middle text-center text-sm">
@@ -73,7 +68,7 @@
       })
       .join("");
 
-    orderBody.innerHTML = loadedOrders;
+    reportBody.innerHTML = loadedOrders;
   } catch (error) {
     console.log(error);
   }

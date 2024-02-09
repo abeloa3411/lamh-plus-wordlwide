@@ -226,6 +226,135 @@
                   </div>
                 </div>
               </div>
+              <div class="card-body">
+                <form role="form">
+                  <div class="row input-group input-group-outline mb-3">
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" id="name" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="text" id="email" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row input-group input-group-outline mb-3">
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Destination</label>
+                        <input
+                          type="text"
+                          id="destination"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Country of Origin</label>
+                        <input type="text" id="origin" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row input-group input-group-outline mb-3">
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Cost</label>
+                        <input type="text" id="cost" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Sale</label>
+                        <input type="text" id="sale" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row input-group input-group-outline mb-3">
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Chargeable weight</label>
+                        <input
+                          type="text"
+                          id="chargeable-weight"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Merchant</label>
+                        <input type="text" id="merchant" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row input-group input-group-outline mb-3">
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <input
+                          type="date"
+                          id="date-of-order"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <input
+                          type="date"
+                          id="date-of-delivery"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row input-group input-group-outline mb-3">
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Dimensions</label>
+                        <input
+                          type="text"
+                          id="dimensions"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Desription</label>
+                        <input
+                          type="text"
+                          id="description"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="horizontal dark my-4" />
+
+                  <div class="text-center">
+                    <button
+                      type="button"
+                      class="btn btn-lg bg-gradient-success btn-lg mt-4 mb-0"
+                      id="create-btn"
+                    >
+                      Generate
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-lg bg-gradient-primary btn-lg mt-4 mb-0"
+                    >
+                      Search
+                    </button>
+                  </div>
+                </form>
+              </div>
               <div class="card-body px-0 pb-2">
                 <div class="table-responsive">
                   <table class="table align-items-center mb-0">
@@ -258,33 +387,7 @@
                         </th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div class="d-flex px-2 py-1">
-                            <div
-                              class="d-flex flex-column justify-content-center"
-                            >
-                              <h6 class="mb-0 text-sm">Abel Wanyonyi</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="avatar-group mt-2">
-                            <p>100285745</p>
-                          </div>
-                        </td>
-                        <td class="align-middle text-center text-sm">
-                          <span class="text-xs font-weight-bold"> Pipes </span>
-                        </td>
-                        <td class="align-middle text-center">
-                          <p>UAE</p>
-                        </td>
-                        <td class="align-middle text-center">
-                          <p>Kenya</p>
-                        </td>
-                      </tr>
-                    </tbody>
+                    <tbody class="report-body"></tbody>
                   </table>
                 </div>
               </div>
@@ -467,6 +570,8 @@
     <script src="../assets/js/core/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="../assets/js/table2excel.js"></script>
+    <script src="../assets/js/reports.js"></script>
     <script>
       var win = navigator.platform.indexOf("Win") > -1;
       if (win && document.querySelector("#sidenav-scrollbar")) {

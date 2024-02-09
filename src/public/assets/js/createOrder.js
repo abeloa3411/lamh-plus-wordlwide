@@ -20,51 +20,52 @@ async function createOrder() {
   const recipient = document.getElementById("recipient-name").value;
 
   if (
-    name === null ||
-    email === null ||
-    orderDate === null ||
-    orderDate === null ||
-    destination === null ||
-    cost === null ||
-    chargeableWeight === null ||
-    dimensions === null ||
-    merchant === null ||
-    deliveryDate === null ||
-    description === null ||
-    sale === null ||
-    shipper === null ||
-    recipient === null
+    name === "" ||
+    email === "" ||
+    orderDate === "" ||
+    orderDate === "" ||
+    destination === "" ||
+    cost === "" ||
+    chargeableWeight === "" ||
+    dimensions === "" ||
+    merchant === "" ||
+    deliveryDate === "" ||
+    description === "" ||
+    sale === "" ||
+    shipper === "" ||
+    recipient === ""
   ) {
     alert("Please fill in all fields");
-  } else {
-    try {
-      fetch("http://localhost:3000/api/orders", {
-        method: "post",
-        headers: new Headers({ "Content-Type": "application/json" }),
-        body: JSON.stringify({
-          name,
-          email,
-          origin,
-          destination,
-          cost,
-          chargeableWeight,
-          dimensions,
-          merchant,
-          orderDate,
-          deliveryDate,
-          description,
-          shipper,
-          recipient,
-          sale,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          alert("Order Added Successfully");
-        });
-    } catch (error) {
-      console.log(error);
-    }
+    return;
+  }
+
+  try {
+    await fetch("http://localhost:3000/api/orders", {
+      method: "post",
+      headers: new Headers({ "Content-Type": "application/json" }),
+      body: JSON.stringify({
+        name,
+        email,
+        origin,
+        destination,
+        cost,
+        chargeableWeight,
+        dimensions,
+        merchant,
+        orderDate,
+        deliveryDate,
+        description,
+        shipper,
+        recipient,
+        sale,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        alert("Order Added Successfully");
+      });
+  } catch (error) {
+    console.log(error);
   }
 }
