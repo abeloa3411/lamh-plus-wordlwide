@@ -3,6 +3,7 @@ import path from "path";
 import dotenv from "dotenv";
 import orders from "./api/orders/orderRoutes.js";
 import customers from "./api/customers/customerRoute.js";
+import auth from "./api/auth/authRoute.js";
 import cors from "cors";
 
 dotenv.config();
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/v1/orders", orders);
 app.use("/api/v1/customer", customers);
+app.use("/api/v1/auth", auth);
 
 app.use(express.static(path.join(__dirname, "src", "public")));
 
