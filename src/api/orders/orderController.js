@@ -172,3 +172,23 @@ export async function updateOrder(req, res) {
     res.status(400).json({ err: error.message });
   }
 }
+
+export async function getReport(req, res) {
+  const { dateOne, dateTwo } = req.body;
+
+  if (!dateOne || !dateTwo) {
+  }
+
+  try {
+    const data = await Order.find({
+      orderDate: {
+        $gte: dateOne,
+        $lte: dateTwo,
+      },
+    });
+
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(400).json({ err: error.message });
+  }
+}
