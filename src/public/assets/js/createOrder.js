@@ -2,8 +2,8 @@ const createBtn = document.getElementById("create-btn");
 
 createBtn.addEventListener("click", createOrder);
 
-const url = "https://lamhplusworldwide.onrender.com/api/orders";
-const localUrl = "http://localhost:3000/api/orders";
+const url = "https://lamhplusworldwide.onrender.com/api/v1/orders";
+const localUrl = "http://localhost:3000/api/v1/orders";
 //create an order
 async function createOrder() {
   //   select elements
@@ -100,7 +100,6 @@ async function createOrder() {
         cost,
         sale,
         description,
-        orderDate: new Date(),
       }),
     })
       .then((res) => res.json())

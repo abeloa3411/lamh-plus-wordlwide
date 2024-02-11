@@ -46,7 +46,7 @@ export async function createOder(req, res) {
     const newOrder = new Order({
       name,
       email,
-      orderNo: "ord" + Math.random().toString(16).slice(2),
+      orderNo: "ORD" + Math.random().toString(16).slice(2),
       contact,
       address,
       shipper,
@@ -60,7 +60,7 @@ export async function createOder(req, res) {
       recipient,
       recipientCompany,
       recipientPhone,
-      trackingNo: "trk" + Math.random().toString(16).slice(2),
+      trackingNo: "TRK" + Math.random().toString(16).slice(2),
       recipientAddress,
       recipientCity,
       recipientZip,
@@ -73,6 +73,7 @@ export async function createOder(req, res) {
       cost,
       sale,
       description,
+      orderDate: new Date().toJSON().slice(0, 10),
     });
 
     const isSaved = await newOrder.save();
