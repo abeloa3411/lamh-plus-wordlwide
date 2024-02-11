@@ -135,3 +135,7 @@
     console.log(error);
   }
 })();
+
+const nameTag = document.getElementById("name-tag");
+
+nameTag.innerHTML = sessionStorage.getItem("user");

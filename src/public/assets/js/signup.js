@@ -34,7 +34,7 @@ document
       .then((data) => {
         const user = data.user.name;
         // Store token in localStorage or sessionStorage
-        sessionStorage.setItem("token", user);
+        sessionStorage.setItem("user", user);
         // Redirect user to dashboard or any other authenticated route
         window.location.href = "dashboard.html";
       })

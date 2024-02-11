@@ -234,7 +234,7 @@
                   class="nav-link text-body font-weight-bold px-0"
                 >
                   <i class="fa fa-user me-sm-1"></i>
-                  <span class="d-sm-inline d-none">Sign In</span>
+                  <span class="d-sm-inline d-none" id="name-tag">Sign In</span>
                 </a>
               </li>
             </ul>
@@ -766,6 +766,10 @@
         };
         Scrollbar.init(document.querySelector("#sidenav-scrollbar"), options);
       }
+
+      const nameTag = document.getElementById("name-tag");
+
+      nameTag.innerHTML = sessionStorage.getItem("user");
     </script>
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
