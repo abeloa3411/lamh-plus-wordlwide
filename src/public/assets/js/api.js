@@ -91,8 +91,10 @@
 
   try {
     const res = await fetch(localUrl);
+    const customerCount = document.getElementById("customer-count");
     const customers = await res.json();
 
+    customerCount.innerHTML = customers.length + " customers";
     const loadedCustomers = customers
       .map((customer) => {
         console.log();

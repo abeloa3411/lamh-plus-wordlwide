@@ -32,9 +32,9 @@ document
         return response.json();
       })
       .then((data) => {
-        const token = data.token;
+        const user = data.user.name;
         // Store token in localStorage or sessionStorage
-        localStorage.setItem("token", token);
+        sessionStorage.setItem("token", user);
         // Redirect user to dashboard or any other authenticated route
         window.location.href = "dashboard.html";
       })

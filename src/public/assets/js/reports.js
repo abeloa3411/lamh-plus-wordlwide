@@ -14,6 +14,7 @@ async function searcResult() {
   if (!data) {
     alert("Enter atleast two date fields");
   }
+
   fetch("http://localhost:3000/api/v1/orders/report", {
     method: "post",
     headers: {
