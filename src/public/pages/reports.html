@@ -241,14 +241,14 @@
                   <div class="row input-group input-group-outline mb-3">
                     <div class="col">
                       <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Full Name</label>
-                        <input type="text" id="name" class="form-control" />
+                        <label class="form-label">From</label>
+                        <input type="date" id="from" class="form-control" />
                       </div>
                     </div>
                     <div class="col">
                       <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="text" id="email" class="form-control" />
+                        <label class="form-label">To</label>
+                        <input type="date" id="to" class="form-control" />
                       </div>
                     </div>
                   </div>
@@ -256,17 +256,13 @@
                   <div class="row input-group input-group-outline mb-3">
                     <div class="col">
                       <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Destination</label>
-                        <input
-                          type="text"
-                          id="destination"
-                          class="form-control"
-                        />
+                        <label class="form-label">Name</label>
+                        <input type="text" id="name" class="form-control" />
                       </div>
                     </div>
                     <div class="col">
                       <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Country of Origin</label>
+                        <label class="form-label">Mechant</label>
                         <input type="text" id="origin" class="form-control" />
                       </div>
                     </div>
@@ -274,7 +270,7 @@
                   <div class="row input-group input-group-outline mb-3">
                     <div class="col">
                       <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Cost</label>
+                        <label class="form-label">Type</label>
                         <input type="text" id="cost" class="form-control" />
                       </div>
                     </div>
@@ -282,67 +278,6 @@
                       <div class="input-group input-group-outline mb-3">
                         <label class="form-label">Sale</label>
                         <input type="text" id="sale" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row input-group input-group-outline mb-3">
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Chargeable weight</label>
-                        <input
-                          type="text"
-                          id="chargeable-weight"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Merchant</label>
-                        <input type="text" id="merchant" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row input-group input-group-outline mb-3">
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <input
-                          type="date"
-                          id="date-of-order"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <input
-                          type="date"
-                          id="date-of-delivery"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row input-group input-group-outline mb-3">
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Dimensions</label>
-                        <input
-                          type="text"
-                          id="dimensions"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Desription</label>
-                        <input
-                          type="text"
-                          id="description"
-                          class="form-control"
-                        />
                       </div>
                     </div>
                   </div>
@@ -365,7 +300,7 @@
                   </div>
                 </form>
               </div>
-              <div class="card-body px-0 pb-2">
+              <div class="card-body px-0 pb-2" id="report-table">
                 <div class="table-responsive">
                   <table class="table align-items-center mb-0">
                     <thead>
@@ -580,8 +515,8 @@
     <script src="../assets/js/core/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-    <script src="../assets/js/table2excel.js"></script>
     <script src="../assets/js/reports.js"></script>
+    <script src="../assets/js/table2excel.js"></script>
     <script>
       var win = navigator.platform.indexOf("Win") > -1;
       if (win && document.querySelector("#sidenav-scrollbar")) {

@@ -271,94 +271,21 @@
                         <th
                           class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
                         >
-                          Enquiry number
+                          Account No
                         </th>
                         <th
                           class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
                         >
-                          Date
+                          Address
                         </th>
                         <th
                           class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
                         >
-                          Inquiry message
-                        </th>
-                        <th
-                          class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-                        >
-                          State
+                          Contact
                         </th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div class="d-flex px-2 py-1">
-                            <div
-                              class="d-flex flex-column justify-content-center"
-                            >
-                              <h6 class="mb-0 text-sm">Abel Wanyonyi</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="avatar-group mt-2">
-                            <p>abeloh@gmail.com</p>
-                          </div>
-                        </td>
-                        <td class="align-middle text-center text-sm">
-                          <span class="text-xs font-weight-bold">1000245</span>
-                        </td>
-                        <td class="align-middle text-center">
-                          <p>20/12/2024</p>
-                        </td>
-                        <td class="align-middle text-center">
-                          <p>Cost of transporting bales from UK to Kenya</p>
-                        </td>
-                        <td class="align-middle text-center">
-                          <a
-                            href="notifications.html"
-                            class="btn btn-outline-primary"
-                            >Close inquiry</a
-                          >
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex px-2 py-1">
-                            <div
-                              class="d-flex flex-column justify-content-center"
-                            >
-                              <h6 class="mb-0 text-sm">Kanambo machengiator</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="avatar-group mt-2">
-                            <p>kanambooh@gmail.com</p>
-                          </div>
-                        </td>
-                        <td class="align-middle text-center text-sm">
-                          <span class="text-xs font-weight-bold">1000245</span>
-                        </td>
-                        <td class="align-middle text-center">
-                          <p>20/11/2024</p>
-                        </td>
-                        <td class="align-middle text-center">
-                          <p>
-                            Transport laptops from uk to Kenya through your
-                            company
-                          </p>
-                        </td>
-                        <td class="align-middle text-center">
-                          <a
-                            href="notifications.html"
-                            class="btn btn-outline-primary"
-                            >Close inquiry</a
-                          >
-                        </td>
-                      </tr>
-                    </tbody>
+                    <tbody id="customer-body"></tbody>
                   </table>
                 </div>
               </div>
@@ -535,6 +462,7 @@
     <script src="../assets/js/core/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="../assets/js/api.js"></script>
     <script>
       var win = navigator.platform.indexOf("Win") > -1;
       if (win && document.querySelector("#sidenav-scrollbar")) {

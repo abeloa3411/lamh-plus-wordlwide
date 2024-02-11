@@ -1,8 +1,6 @@
 (async function getOrders() {
   try {
-    const res = await fetch(
-      "https://lamhplusworldwide.onrender.com/api/orders"
-    );
+    const res = await fetch("http://localhost:3000/api/v1/orders");
     const orders = await res.json();
 
     const reportBody = document.querySelector(".report-body");
@@ -11,20 +9,36 @@
       .map((order) => {
         const {
           name,
-          destination,
           orderNo,
-          origin,
           orderDate,
-          deliveryDate,
-          cost,
-          state,
-          dimensions,
-          chargeableWeight,
+          email,
+          contact,
+          address,
+          shipperName,
+          shipperCompany,
+          shipperPhone,
+          shipperAddress,
+          shipperCity,
+          shipperZip,
+          shipperCountry,
+          shipperEmail,
+          recipientName,
+          recipientCompany,
+          recipientPhone,
+          recipientAddress,
+          recipientCity,
+          recipientZip,
+          recipientCountry,
+          recipientEmail,
+          weight,
+          dimension,
           merchant,
+          chargeableWeight,
+          cost,
+          sale,
           description,
         } = order;
 
-        console.log(order);
         return `
              <tr>
                         <td>
@@ -37,15 +51,61 @@
                           </div>
                         </td>
                         <td>
-                          <div class="avatar-group mt-2">
-                            <p>${orderNo}</p>
-                          </div>
-                        </td>
-                        <td class="align-middle text-center text-sm">
-                          <span class="text-xs font-weight-bold"> ${origin} </span>
+                          <p>${orderNo}</p>
                         </td>
                         <td class="align-middle text-center">
-                          <p>${destination}</p>
+                          <p> ${shipperCity} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${email} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${contact} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${shipperAddress} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${shipperName} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${shipperCompany} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${shipperPhone} </p>
+                        </td>
+                        <td class="align-middle text-center">
+                          <p>${shipperCountry}</p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${shipperZip} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${shipperAddress} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${recipientName} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${recipientAddress} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${recipientCity} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${recipientCompany} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${recipientPhone} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${recipientZip} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${recipientCountry} </p>
+                        </td>
+                         <td class="align-middle text-center">
+                          <p> ${recipientEmail} </p>
                         </td>
                         <td class="align-middle text-center">
                           <p>${description}</p>
@@ -57,16 +117,16 @@
                           <p>${cost}</p>
                         </td>
                            <td class="align-middle text-center">
+                          <p>${sale}</p>
+                        </td>
+                        <td class="align-middle text-center">
                           <p>${chargeableWeight}</p>
                         </td>
                         <td class="align-middle text-center">
-                          <p>${state}</p>
-                        </td>
-                        <td class="align-middle text-center">
-                          <p>${dimensions}</p>
+                          <p>${dimension}</p>
                         </td>
                           <td class="align-middle text-center">
-                          <p>${deliveryDate}</p>
+                          <p>${weight}</p>
                         </td>
                           <td class="align-middle text-center">
                           <p>${orderDate}</p>
