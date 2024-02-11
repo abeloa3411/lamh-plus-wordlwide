@@ -301,7 +301,7 @@
                     </div>
                     <div class="text-end pt-1">
                       <p class="text-sm mb-0 text-capitalize">Orders</p>
-                      <h4 class="mb-0">3</h4>
+                      <h4 class="mb-0" id="order-count"></h4>
                     </div>
                   </div>
 
@@ -320,23 +320,6 @@
                     <div class="text-end pt-1">
                       <p class="text-sm mb-0 text-capitalize">Inquiries</p>
                       <h4 class="mb-0">3</h4>
-                    </div>
-                  </div>
-
-                  <hr class="horizontal my-0 dark" />
-                  <div class="card-footer p-3"></div>
-                </div>
-
-                <div class="card">
-                  <div class="card-header p-3 pt-2 bg-transparent">
-                    <div
-                      class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute"
-                    >
-                      <i class="material-icons opacity-10">receipt_long</i>
-                    </div>
-                    <div class="text-end pt-1">
-                      <p class="text-sm mb-0 text-capitalize">Quotes</p>
-                      <h4 class="mb-0">1</h4>
                     </div>
                   </div>
 
@@ -529,7 +512,7 @@
     <script src="./assets/js/core/bootstrap.min.js"></script>
     <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
-
+    <script src="./assets/js/api.js"></script>
     <script>
       var win = navigator.platform.indexOf("Win") > -1;
       if (win && document.querySelector("#sidenav-scrollbar")) {

@@ -243,6 +243,9 @@
               <h4 class="font-weight-bolder">Add an Order</h4>
             </div>
             <div class="card-body">
+              <div class="card-header">
+                <h5 class="font-weight-bolder">Customer details</h5>
+              </div>
               <form role="form">
                 <div class="row input-group input-group-outline mb-3">
                   <div class="col">
@@ -262,92 +265,23 @@
                 <div class="row input-group input-group-outline mb-3">
                   <div class="col">
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Destination</label>
-                      <input
-                        type="text"
-                        id="destination"
-                        class="form-control"
-                      />
+                      <label class="form-label">Contact</label>
+                      <input type="text" id="contact" class="form-control" />
                     </div>
                   </div>
                   <div class="col">
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Country of Origin</label>
-                      <input type="text" id="origin" class="form-control" />
+                      <label class="form-label">Address</label>
+                      <input type="text" id="address" class="form-control" />
                     </div>
                   </div>
                 </div>
-                <div class="row input-group input-group-outline mb-3">
-                  <div class="col">
-                    <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Cost</label>
-                      <input type="text" id="cost" class="form-control" />
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Sale</label>
-                      <input type="text" id="sale" class="form-control" />
-                    </div>
-                  </div>
-                </div>
-                <div class="row input-group input-group-outline mb-3">
-                  <div class="col">
-                    <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Chargeable weight</label>
-                      <input
-                        type="text"
-                        id="chargeable-weight"
-                        class="form-control"
-                      />
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Merchant</label>
-                      <input type="text" id="merchant" class="form-control" />
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row input-group input-group-outline mb-3">
-                  <div class="col">
-                    <div class="input-group input-group-outline mb-3">
-                      <input
-                        type="date"
-                        id="date-of-order"
-                        class="form-control"
-                      />
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="input-group input-group-outline mb-3">
-                      <input
-                        type="date"
-                        id="date-of-delivery"
-                        class="form-control"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="row input-group input-group-outline mb-3">
-                  <div class="col">
-                    <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Dimensions</label>
-                      <input type="text" id="dimensions" class="form-control" />
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Desription</label>
-                      <input
-                        type="text"
-                        id="description"
-                        class="form-control"
-                      />
-                    </div>
-                  </div>
-                </div>
+                <button
+                  type="button"
+                  class="btn btn-lg bg-gradient-success btn-lg mt-4 mb-2"
+                >
+                  Add to Address book
+                </button>
 
                 <hr class="horizontal dark my-4" />
 
@@ -439,7 +373,7 @@
                           <label class="form-label">Shippers email</label>
                           <input
                             type="text"
-                            id="shippers email"
+                            id="shippers-email"
                             class="form-control"
                           />
                         </div>
@@ -470,10 +404,10 @@
                       </div>
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Shippes Company</label>
+                          <label class="form-label">Recipient Company</label>
                           <input
                             type="text"
-                            id="recipient company"
+                            id="recipient-company"
                             class="form-control"
                           />
                         </div>
@@ -492,7 +426,7 @@
                       </div>
                       <div class="col">
                         <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Address 1</label>
+                          <label class="form-label">Address</label>
                           <input
                             type="text"
                             id="recipient-address"
@@ -556,6 +490,75 @@
                   </div>
                 </div>
 
+                <hr class="horizontal dark my-4" />
+
+                <div class="col">
+                  <div>
+                    <h5>Shipment Details</h5>
+                  </div>
+                  <div class="row input-group input-group-outline mb-3">
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Weight</label>
+                        <input type="text" id="weight" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">dimension</label>
+                        <input
+                          type="text"
+                          id="dimensions"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row input-group input-group-outline mb-3">
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Merchant</label>
+                        <input type="text" id="merchant" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Chargeable weight</label>
+                        <input
+                          type="text"
+                          id="chargeable-weight"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row input-group input-group-outline mb-3">
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Cost</label>
+                        <input type="number" id="cost" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Sale</label>
+                        <input type="number" id="sale" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row input-group input-group-outline mb-3">
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Description</label>
+                        <input
+                          type="text"
+                          id="description"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <hr class="horizontal dark my-4" />
 
                 <div class="text-center">

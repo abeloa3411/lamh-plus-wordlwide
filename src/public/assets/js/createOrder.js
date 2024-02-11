@@ -1,63 +1,106 @@
 const createBtn = document.getElementById("create-btn");
 
 createBtn.addEventListener("click", createOrder);
+
+const url = "https://lamhplusworldwide.onrender.com/api/orders";
+const localUrl = "http://localhost:3000/api/orders";
 //create an order
 async function createOrder() {
   //   select elements
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
-  const origin = document.getElementById("origin").value;
-  const destination = document.getElementById("destination").value;
-  const cost = document.getElementById("cost").value;
-  const chargeableWeight = document.getElementById("chargeable-weight").value;
-  const dimensions = document.getElementById("dimensions").value;
+  const contact = document.getElementById("contact").value;
+  const address = document.getElementById("address").value;
+  const shipperName = document.getElementById("shippers-name").value;
+  const shipperCompany = document.getElementById("shippers-company").value;
+  const shipperPhone = document.getElementById("shippers-phone").value;
+  const shipperAddress = document.getElementById("shippers-address").value;
+  const shipperCity = document.getElementById("shippers-city").value;
+  const shipperZip = document.getElementById("shippers-zip-code").value;
+  const shipperCountry = document.getElementById("shippers-country").value;
+  const shipperEmail = document.getElementById("shippers-email").value;
+  const recipientName = document.getElementById("recipient-name").value;
+  const recipientCompany = document.getElementById("recipient-company").value;
+  const recipientPhone = document.getElementById("recipient-phone").value;
+  const recipientAddress = document.getElementById("recipient-address").value;
+  const recipientCity = document.getElementById("recipient-city").value;
+  const recipientZip = document.getElementById("recipient-zip-code").value;
+  const recipientCountry = document.getElementById("recipient-country").value;
+  const recipientEmail = document.getElementById("recipient-email").value;
+  const weight = document.getElementById("weight").value;
+  const dimension = document.getElementById("dimensions").value;
   const merchant = document.getElementById("merchant").value;
-  const orderDate = document.getElementById("date-of-order").value;
-  const deliveryDate = document.getElementById("date-of-delivery").value;
-  const description = document.getElementById("description").value;
+  const chargeableWeight = document.getElementById("chargeable-weight").value;
+  const cost = document.getElementById("cost").value;
   const sale = document.getElementById("sale").value;
-  const shipper = document.getElementById("shippers-name").value;
-  const recipient = document.getElementById("recipient-name").value;
+  const description = document.getElementById("description").value;
 
   if (
     name === "" ||
     email === "" ||
-    orderDate === "" ||
-    orderDate === "" ||
-    destination === "" ||
-    cost === "" ||
-    chargeableWeight === "" ||
-    dimensions === "" ||
+    contact === "" ||
+    address === "" ||
+    shipperName === "" ||
+    shipperCompany === "" ||
+    shipperPhone === "" ||
+    shipperAddress === "" ||
+    shipperCity === "" ||
+    shipperZip === "" ||
+    shipperCountry === "" ||
+    shipperEmail === "" ||
+    recipientName === "" ||
+    recipientCompany === "" ||
+    recipientPhone === "" ||
+    recipientAddress === "" ||
+    recipientCity === "" ||
+    recipientZip === "" ||
+    recipientCountry === "" ||
+    recipientEmail === "" ||
+    weight === "" ||
+    dimension === "" ||
     merchant === "" ||
-    deliveryDate === "" ||
-    description === "" ||
+    chargeableWeight === "" ||
+    cost === "" ||
     sale === "" ||
-    shipper === "" ||
-    recipient === ""
+    description === ""
   ) {
     alert("Please fill in all fields");
     return;
   }
 
   try {
-    await fetch("https://lamhplusworldwide.onrender.com/api/orders", {
+    await fetch(localUrl, {
       method: "post",
       headers: new Headers({ "Content-Type": "application/json" }),
       body: JSON.stringify({
         name,
         email,
-        origin,
-        destination,
-        cost,
-        chargeableWeight,
-        dimensions,
+        contact,
+        address,
+        shipperName,
+        shipperCompany,
+        shipperPhone,
+        shipperAddress,
+        shipperCity,
+        shipperZip,
+        shipperCountry,
+        shipperEmail,
+        recipientName,
+        recipientCompany,
+        recipientPhone,
+        recipientAddress,
+        recipientCity,
+        recipientZip,
+        recipientCountry,
+        recipientEmail,
+        weight,
+        dimension,
         merchant,
-        orderDate,
-        deliveryDate,
-        description,
-        shipper,
-        recipient,
+        chargeableWeight,
+        cost,
         sale,
+        description,
+        orderDate: new Date(),
       }),
     })
       .then((res) => res.json())
