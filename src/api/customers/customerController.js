@@ -12,6 +12,11 @@ export async function getCustomers(req, res) {
 
 export async function createCustomer(req, res) {
   const { name, address, contact, email } = req.body;
+
+  if (!name || !address || !contact || !email) {
+    throw Error("Please fill in all fields");
+  }
+
   try {
     const customer = new Customer({
       customerNo: "CUS" + Math.random().toString(16).slice(8),

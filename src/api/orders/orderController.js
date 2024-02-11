@@ -41,6 +41,38 @@ export async function createOder(req, res) {
     description,
   } = req.body;
 
+  if (
+    !name ||
+    !email ||
+    !contact ||
+    !address ||
+    !shipperName ||
+    !shipperCompany ||
+    !shipperPhone ||
+    !shipperAddress ||
+    !shipperCity ||
+    !shipperZip ||
+    !shipperCountry ||
+    !shipperEmail ||
+    !recipientName ||
+    !recipientCompany ||
+    !recipientPhone ||
+    !recipientAddress ||
+    !recipientCity ||
+    !recipientZip ||
+    !recipientCountry ||
+    !recipientEmail ||
+    !weight ||
+    !dimension ||
+    !merchant ||
+    !chargeableWeight ||
+    !cost ||
+    !sale ||
+    !description
+  ) {
+    throw Error("Please input all fields");
+  }
+
   try {
     const newOrder = new Order({
       name,
