@@ -1,10 +1,11 @@
 //api calls
 //get orders
 (async function getOrders() {
+  const url = "https://lamhplusworldwide.onrender.com/api/v1/orders";
+  const localUrl = "http://localhost:3000/api/v1/orders";
+
   try {
-    const res = await fetch(
-      "https://lamhplusworldwide.onrender.com/api/orders"
-    );
+    const res = await fetch(localUrl);
     const orders = await res.json();
 
     const orderBody = document.getElementById("order-body");
@@ -15,11 +16,11 @@
     const loadedOrders = orders
       .map((order) => {
         const {
-          _id,
           name,
-          destination,
+          shipperCity,
           orderNo,
-          origin,
+          recipientCity,
+          trackingNo,
           cost,
           state,
           chargeableWeight,
@@ -38,16 +39,17 @@
                             </div>
                           </div>
                         </td>
-                        <td>
-                          <div class="avatar-group mt-2">
-                            <p>${_id}</p>
-                          </div>
+                        <td>            
+                            <p>${orderNo}</p>
+                        </td>
+                        <td>            
+                            <p>${trackingNo}</p>
                         </td>
                         <td class="align-middle text-center text-sm">
-                          <span class="text-xs font-weight-bold"> ${origin} </span>
+                          <p> ${shipperCity} </p>
                         </td>
                         <td class="align-middle text-center">
-                          <p>${destination}</p>
+                          <p>${recipientCity}</p>
                         </td>
                         <td class="align-middle text-center">
                           <p>${description}</p>
@@ -62,11 +64,11 @@
                           <p>${chargeableWeight}</p>
                         </td>
                         <td class="align-middle text-center">
-                          <a class="btn btn-outline-primary">${state}</a>
+                          <p>${state}</>
                         </td>
                         <td class="align-middle text-center">
-                          <a href="update.html" class="btn btn-outline-primary"
-                            >Edit</a
+                          <a href="#" class="btn btn-outline-primary"
+                            >Cancel Order</a
                           >
                         </td>
             </tr>

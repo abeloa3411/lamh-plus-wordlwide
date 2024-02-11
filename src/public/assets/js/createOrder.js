@@ -4,6 +4,7 @@ createBtn.addEventListener("click", createOrder);
 
 const url = "https://lamhplusworldwide.onrender.com/api/v1/orders";
 const localUrl = "http://localhost:3000/api/v1/orders";
+const localUrlCustomer = "http://localhost:3000/api/v1/customer";
 //create an order
 async function createOrder() {
   //   select elements
@@ -106,6 +107,43 @@ async function createOrder() {
       .then((data) => {
         console.log(data);
         alert("Order Added Successfully");
+      });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+const createCustomerBtn = document.getElementById("create-customer-btn");
+
+createCustomerBtn.addEventListener("click", createCustomer);
+
+//create customer
+async function createCustomer() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const contact = document.getElementById("contact").value;
+  const address = document.getElementById("address").value;
+
+  if (name === "" || email === "" || contact === "" || address === "") {
+    alert("Add all customer fields");
+    return;
+  }
+
+  try {
+    await fetch(localUrlCustomer, {
+      method: "post",
+      headers: new Headers({ "Content-Type": "application/json" }),
+      body: JSON.stringify({
+        name,
+        email,
+        contact,
+        address,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        alert("Customer added");
       });
   } catch (error) {
     console.log(error);
