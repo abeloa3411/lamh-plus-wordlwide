@@ -107,7 +107,7 @@ async function createOrder() {
       .then((data) => {
         console.log(data);
         alert("Order Added Successfully");
-        window.location.reload;
+        window.location.reload();
       });
   } catch (error) {
     console.log(error);
