@@ -2,7 +2,7 @@
 //get orders
 (async function getOrders() {
   const url = "https://lamhplusworldwide.onrender.com/api/v1/orders";
-  const localUrl = "http://localhost:3000/api/v1/orders";
+  const localUrl = "/api/v1/orders";
 
   try {
     const res = await fetch(localUrl);
@@ -85,7 +85,7 @@
 
 (async function getustomers() {
   const url = "https://lamhplusworldwide.onrender.com/api/v1/orders";
-  const localUrl = "http://localhost:3000/api/v1/customer";
+  const localUrl = "/api/v1/customer";
 
   const customerBody = document.getElementById("customer-body");
 

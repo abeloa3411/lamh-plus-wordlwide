@@ -15,7 +15,7 @@ async function searcResult() {
     alert("Enter atleast two date fields");
   }
 
-  fetch("http://localhost:3000/api/v1/orders/report", {
+  fetch("/api/v1/orders/report", {
     method: "post",
     headers: {
       "Content-Type": "application/json",
@@ -50,32 +50,17 @@ function displayData(data) {
         name,
         orderNo,
         orderDate,
-        email,
-        contact,
-        address,
         shipperName,
-        shipperCompany,
-        shipperPhone,
-        shipperAddress,
-        shipperCity,
-        shipperZip,
         shipperCountry,
-        shipperEmail,
         recipientName,
-        recipientCompany,
-        recipientPhone,
-        recipientAddress,
-        recipientCity,
-        recipientZip,
         recipientCountry,
-        recipientEmail,
         weight,
-        dimension,
         merchant,
         chargeableWeight,
         cost,
         sale,
-        description,
+        trackingNo,
+        state,
       } = report;
 
       return `
@@ -85,90 +70,49 @@ function displayData(data) {
                               <div
                                 class="d-flex flex-column justify-content-center"
                               >
-                                <h6 class="mb-0 text-sm">${name}</h6>
+                                <h6 class="mb-0 text-sm">${orderDate}</h6>
                               </div>
                             </div>
                           </td>
                           <td>
-                            <p>${orderNo}</p>
+                            <p>${merchant}</p>
                           </td>
                           <td class="align-middle text-center">
-                            <p> ${shipperCity} </p>
+                            <p> ${orderNo} </p>
                           </td>
                            <td class="align-middle text-center">
-                            <p> ${email} </p>
+                            <p> ${trackingNo} </p>
                           </td>
                            <td class="align-middle text-center">
-                            <p> ${contact} </p>
+                            <p> ${weight} </p>
                           </td>
                            <td class="align-middle text-center">
-                            <p> ${shipperAddress} </p>
+                            <p> ${chargeableWeight} </p>
+                          </td>
+                           <td class="align-middle text-center">
+                            <p> ${cost} </p>
+                          </td>
+                           <td class="align-middle text-center">
+                            <p> ${sale} </p>
+                          </td>
+                           <td class="align-middle text-center">
+                            <p> ${shipperCountry} </p>
+                          </td>
+                          <td class="align-middle text-center">
+                            <p>${recipientCountry}</p>
+                          </td>
+                           <td class="align-middle text-center">
+                            <p> ${name} </p>
                           </td>
                            <td class="align-middle text-center">
                             <p> ${shipperName} </p>
                           </td>
-                           <td class="align-middle text-center">
-                            <p> ${shipperCompany} </p>
-                          </td>
-                           <td class="align-middle text-center">
-                            <p> ${shipperPhone} </p>
-                          </td>
-                          <td class="align-middle text-center">
-                            <p>${shipperCountry}</p>
-                          </td>
-                           <td class="align-middle text-center">
-                            <p> ${shipperZip} </p>
-                          </td>
-                           <td class="align-middle text-center">
-                            <p> ${shipperAddress} </p>
-                          </td>
+                           </td>
                            <td class="align-middle text-center">
                             <p> ${recipientName} </p>
                           </td>
-                           <td class="align-middle text-center">
-                            <p> ${recipientAddress} </p>
-                          </td>
-                           <td class="align-middle text-center">
-                            <p> ${recipientCity} </p>
-                          </td>
-                           <td class="align-middle text-center">
-                            <p> ${recipientCompany} </p>
-                          </td>
-                           <td class="align-middle text-center">
-                            <p> ${recipientPhone} </p>
-                          </td>
-                           <td class="align-middle text-center">
-                            <p> ${recipientZip} </p>
-                          </td>
-                           <td class="align-middle text-center">
-                            <p> ${recipientCountry} </p>
-                          </td>
-                           <td class="align-middle text-center">
-                            <p> ${recipientEmail} </p>
-                          </td>
-                          <td class="align-middle text-center">
-                            <p>${description}</p>
-                          </td>
-                             <td class="align-middle text-center">
-                            <p>${merchant}</p>
-                          </td>
-                             <td class="align-middle text-center">
-                            <p>${cost}</p>
-                          </td>
-                             <td class="align-middle text-center">
-                            <p>${sale}</p>
-                          </td>
-                          <td class="align-middle text-center">
-                            <p>${chargeableWeight}</p>
-                          </td>
-                          <td class="align-middle text-center">
-                            <p>${dimension}</p>
-                          </td>
-                            <td class="align-middle text-center">
-                            <p>${weight}</p>
-                          </td>
-                            <td class="align-middle text-center">
-                            <p>${orderDate}</p>
+                              <td class="align-middle text-center">
+                            <p> ${state} </p>
                           </td>
               </tr>
 

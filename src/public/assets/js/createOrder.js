@@ -3,8 +3,8 @@ const createBtn = document.getElementById("create-btn");
 createBtn.addEventListener("click", createOrder);
 
 const url = "https://lamhplusworldwide.onrender.com/api/v1/orders";
-const localUrl = "http://localhost:3000/api/v1/orders";
-const localUrlCustomer = "http://localhost:3000/api/v1/customer";
+const localUrl = "/api/v1/orders";
+const localUrlCustomer = "/api/v1/customer";
 //create an order
 async function createOrder() {
   //   select elements
@@ -107,6 +107,7 @@ async function createOrder() {
       .then((data) => {
         console.log(data);
         alert("Order Added Successfully");
+        window.location.reload;
       });
   } catch (error) {
     console.log(error);

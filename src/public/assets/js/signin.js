@@ -16,7 +16,7 @@ document
     };
 
     // Assuming there's an API endpoint for authentication
-    fetch("http://localhost:3000/api/v1/auth/login", {
+    fetch("/api/v1/auth/login", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
