@@ -17,9 +17,15 @@ export async function createCustomer(req, res) {
     throw Error("Please fill in all fields");
   }
 
+  const exists = await Customer.find({ email });
+
+  if (exists) {
+    throw Error("User Already exist");
+  }
+
   try {
     const customer = new Customer({
-      customerNo: "CUS" + Math.random().toString(16).slice(8),
+      customerNo: "C" + Math.floor(Math.random() * 90000),
       name,
       address,
       contact,

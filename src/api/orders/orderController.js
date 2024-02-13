@@ -31,13 +31,14 @@ export async function createOder(req, res) {
     recipientCity,
     recipientZip,
     recipientCountry,
+    trackingNo,
     recipientEmail,
     weight,
-    dimension,
     merchant,
     chargeableWeight,
     cost,
     sale,
+    value,
     description,
   } = req.body;
 
@@ -63,11 +64,12 @@ export async function createOder(req, res) {
     !recipientCountry ||
     !recipientEmail ||
     !weight ||
-    !dimension ||
+    !trackingNo ||
     !merchant ||
     !chargeableWeight ||
     !cost ||
     !sale ||
+    !value ||
     !description
   ) {
     throw Error("Please input all fields");
@@ -91,19 +93,19 @@ export async function createOder(req, res) {
       recipientName,
       recipientCompany,
       recipientPhone,
-      trackingNo: "TRK" + 101 + Math.floor(Math.random() * 90000),
+      trackingNo,
       recipientAddress,
       recipientCity,
       recipientZip,
       recipientCountry,
       recipientEmail,
       weight,
-      dimension,
       merchant,
       chargeableWeight,
       cost,
       sale,
       description,
+      value,
       orderDate: new Date().toJSON().slice(0, 10),
     });
 

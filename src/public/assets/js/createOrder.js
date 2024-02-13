@@ -29,11 +29,14 @@ async function createOrder() {
   const recipientCountry = document.getElementById("recipient-country").value;
   const recipientEmail = document.getElementById("recipient-email").value;
   const weight = document.getElementById("weight").value;
-  const dimension = document.getElementById("dimensions").value;
+  const length = document.getElementById("length").value;
+  const width = document.getElementById("width").value;
+  const height = document.getElementById("height").value;
   const merchant = document.getElementById("merchant").value;
-  const chargeableWeight = document.getElementById("chargeable-weight").value;
+  const trackingNo = document.getElementById("tracking-no").value;
   const cost = document.getElementById("cost").value;
   const sale = document.getElementById("sale").value;
+  const value = document.getElementById("sale").value;
   const description = document.getElementById("description").value;
 
   if (
@@ -58,10 +61,11 @@ async function createOrder() {
     recipientCountry === "" ||
     recipientEmail === "" ||
     weight === "" ||
-    dimension === "" ||
+    length === "" ||
     merchant === "" ||
-    chargeableWeight === "" ||
     cost === "" ||
+    !value ||
+    !trackingNo ||
     sale === "" ||
     description === ""
   ) {
@@ -92,13 +96,15 @@ async function createOrder() {
         recipientAddress,
         recipientCity,
         recipientZip,
+        trackingNo,
         recipientCountry,
         recipientEmail,
         weight,
-        dimension,
         merchant,
-        chargeableWeight,
+        chargeableWeight:
+          (Number(length) * Number(width) * Number(height)) / 5000,
         cost,
+        value,
         sale,
         description,
       }),

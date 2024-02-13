@@ -42,6 +42,7 @@ const OrderSchema = mongoose.Schema({
   chargeableWeight: String,
   cost: Number,
   sale: Number,
+  value: String,
   description: String,
   orderDate: String,
   state: {

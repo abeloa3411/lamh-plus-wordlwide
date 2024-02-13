@@ -53,6 +53,11 @@
       id="sidenav-main"
     >
       <div class="sidenav-header">
+        <i
+          class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+          aria-hidden="true"
+          id="iconSidenav"
+        ></i>
         <a class="navbar-brand m-0" href="#" target="_blank">
           <span class="ms-1 font-weight-bold text-white"
             >Lamh Plus Worldwide</span
@@ -73,10 +78,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link text-white active bg-gradient-primary"
-              href="../pages/enquiries.html"
-            >
+            <a class="nav-link text-white" href="../pages/enquiries.html">
               <div
                 class="text-white text-center me-2 d-flex align-items-center justify-content-center"
               >
@@ -105,9 +107,11 @@
               <span class="nav-link-text ms-1">Reports</span>
             </a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link text-white" href="../pages/notifications.html">
+            <a
+              class="nav-link text-white active bg-gradient-primary"
+              href="../pages/notifications.html"
+            >
               <div
                 class="text-white text-center me-2 d-flex align-items-center justify-content-center"
               >
@@ -177,10 +181,10 @@
                 class="breadcrumb-item text-sm text-dark active"
                 aria-current="page"
               >
-                Inquiries
+                Notifications
               </li>
             </ol>
-            <h6 class="font-weight-bolder mb-0">Inquiries</h6>
+            <h6 class="font-weight-bolder mb-0">Notifications</h6>
           </nav>
           <div
             class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
@@ -239,69 +243,67 @@
       </nav>
       <!-- End Navbar -->
       <div class="container-fluid py-4">
-        <div class="row mb-4">
-          <div>
-            <div class="card">
-              <div class="card-header pb-0">
-                <div class="row">
-                  <div class="col-lg-6 col-7">
-                    <h6>Enquiries</h6>
-                    <p class="text-sm mb-0">
-                      <i class="fa fa-check text-info" aria-hidden="true"></i>
-                      <span
-                        class="font-weight-bold ms-1"
-                        id="inquiry-count"
-                      ></span>
-                    </p>
+        <div class="row">
+          <div class="card card-plain">
+            <div class="card-header">
+              <h4 class="font-weight-bolder">Add an Inquiry</h4>
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h5 class="font-weight-bolder">Customer details</h5>
+              </div>
+              <form role="form">
+                <div class="row input-group input-group-outline mb-3">
+                  <div class="col">
+                    <div class="input-group input-group-outline mb-3">
+                      <label class="form-label">Full Name</label>
+                      <input type="text" id="name" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="input-group input-group-outline mb-3">
+                      <label class="form-label">Email</label>
+                      <input type="text" id="email" class="form-control" />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="card-body px-0 pb-2">
-                <div class="table-responsive">
-                  <table class="table align-items-center mb-0">
-                    <thead>
-                      <tr>
-                        <th
-                          class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-                        >
-                          Name
-                        </th>
-                        <th
-                          class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
-                        >
-                          Email
-                        </th>
-                        <th
-                          class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-                        >
-                          Enquiry number
-                        </th>
-                        <th
-                          class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-                        >
-                          Date
-                        </th>
-                        <th
-                          class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-                        >
-                          Inquiry message
-                        </th>
-                        <th
-                          class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-                        >
-                          Phone
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody id="inquiry-body"></tbody>
-                  </table>
+
+                <div class="row input-group input-group-outline mb-3">
+                  <div class="col">
+                    <div class="input-group input-group-outline mb-3">
+                      <label class="form-label">Contact</label>
+                      <input type="text" id="phone" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="input-group input-group-outline mb-3">
+                      <label class="form-label">Description</label>
+                      <input
+                        type="text"
+                        id="description"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <a href="./create-inquiry.html" class="btn btn-outline-primary"
-                  >Add inquiry</a
-                >
-              </div>
+                <hr class="horizontal dark my-4" />
+
+                <div class="text-center">
+                  <button
+                    type="button"
+                    class="btn btn-lg bg-gradient-success btn-lg mt-4 mb-0"
+                    id="create-inq-btn"
+                  >
+                    Create
+                  </button>
+                  <!-- <button
+                    type="button"
+                    class="btn btn-lg bg-gradient-primary btn-lg mt-4 mb-0"
+                  >
+                    Cancel
+                  </button> -->
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -318,7 +320,7 @@
                   </script>
                   , made by
                   <a
-                    href="https://www.abel-wanyonyi.vercel.app"
+                    href="https://www.creative-tim.com"
                     class="font-weight-bold"
                     target="_blank"
                     >elloh</a
@@ -330,22 +332,34 @@
                   class="nav nav-footer justify-content-center justify-content-lg-end"
                 >
                   <li class="nav-item">
-                    <a href="#" class="nav-link text-muted" target="_blank"
+                    <a
+                      href="https://www.creative-tim.com"
+                      class="nav-link text-muted"
+                      target="_blank"
                       >elloh</a
                     >
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link text-muted" target="_blank"
+                    <a
+                      href="https://www.creative-tim.com/presentation"
+                      class="nav-link text-muted"
+                      target="_blank"
                       >About Us</a
                     >
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link text-muted" target="_blank"
+                    <a
+                      href="https://www.creative-tim.com/blog"
+                      class="nav-link text-muted"
+                      target="_blank"
                       >Blog</a
                     >
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link pe-0 text-muted" target="_blank"
+                    <a
+                      href="https://www.creative-tim.com/license"
+                      class="nav-link pe-0 text-muted"
+                      target="_blank"
                       >License</a
                     >
                   </li>
@@ -475,7 +489,7 @@
     <script src="../assets/js/core/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-    <script src="../assets/js/getInc.js"></script>
+    <script src="../assets/js/createInq.js"></script>
     <script>
       var win = navigator.platform.indexOf("Win") > -1;
       if (win && document.querySelector("#sidenav-scrollbar")) {

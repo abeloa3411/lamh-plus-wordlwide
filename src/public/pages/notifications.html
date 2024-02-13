@@ -181,10 +181,10 @@
                 class="breadcrumb-item text-sm text-dark active"
                 aria-current="page"
               >
-                Notifications
+                Create Order
               </li>
             </ol>
-            <h6 class="font-weight-bolder mb-0">Notifications</h6>
+            <h6 class="font-weight-bolder mb-0">Create Order</h6>
           </nav>
           <div
             class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
@@ -287,7 +287,7 @@
                   class="btn btn-lg bg-gradient-success btn-lg mt-4 mb-2"
                   id="create-customer-btn"
                 >
-                  Add to Address book
+                  Add customer
                 </button>
 
                 <hr class="horizontal dark my-4" />
@@ -386,6 +386,13 @@
                         </div>
                       </div>
                     </div>
+                    <button
+                      type="button"
+                      class="btn btn-lg bg-gradient-success btn-lg mt-4 mb-2"
+                      id="add-to-address"
+                    >
+                      Add to adress book
+                    </button>
                   </div>
                   <div class="col">
                     <div>
@@ -482,6 +489,13 @@
                         </div>
                       </div>
                     </div>
+                    <button
+                      type="button"
+                      class="btn btn-lg bg-gradient-success btn-lg mt-4 mb-2"
+                      id="add-to-address"
+                    >
+                      Add to adress book
+                    </button>
                   </div>
                 </div>
 
@@ -500,12 +514,32 @@
                     </div>
                     <div class="col">
                       <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">dimension</label>
+                        <label class="form-label">Description</label>
                         <input
                           type="text"
-                          id="dimensions"
+                          id="description"
                           class="form-control"
                         />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row input-group input-group-outline mb-3">
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Cost</label>
+                        <input type="text" id="cost" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Sale</label>
+                        <input type="text" id="sale" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Value</label>
+                        <input type="text" id="value" class="form-control" />
                       </div>
                     </div>
                   </div>
@@ -518,38 +552,33 @@
                     </div>
                     <div class="col">
                       <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Chargeable weight</label>
+                        <label class="form-label">Tracking No</label>
                         <input
-                          type="text"
-                          id="chargeable-weight"
+                          type="number"
+                          id="tracking-no"
                           class="form-control"
                         />
                       </div>
                     </div>
                   </div>
                   <div class="row input-group input-group-outline mb-3">
+                    <p>Dimensions</p>
                     <div class="col">
                       <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Cost</label>
-                        <input type="number" id="cost" class="form-control" />
+                        <label class="form-label">Length</label>
+                        <input type="text" id="length" class="form-control" />
                       </div>
                     </div>
                     <div class="col">
                       <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Sale</label>
-                        <input type="number" id="sale" class="form-control" />
+                        <label class="form-label">Width</label>
+                        <input type="text" id="width" class="form-control" />
                       </div>
                     </div>
-                  </div>
-                  <div class="row input-group input-group-outline mb-3">
                     <div class="col">
                       <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Description</label>
-                        <input
-                          type="text"
-                          id="description"
-                          class="form-control"
-                        />
+                        <label class="form-label">Height</label>
+                        <input type="text" id="height" class="form-control" />
                       </div>
                     </div>
                   </div>
