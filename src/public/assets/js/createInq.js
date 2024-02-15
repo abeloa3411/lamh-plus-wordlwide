@@ -1,4 +1,5 @@
 const urlInq = "/api/v1/inquiries";
+const url = "https://lamhplusworldwide.onrender.com/api/v1/inquiries";
 
 const createInqBtn = document.getElementById("create-inq-btn");
 

@@ -5,7 +5,7 @@
   const localUrl = "/api/v1/orders";
 
   try {
-    const res = await fetch(localUrl);
+    const res = await fetch(url);
     const orders = await res.json();
 
     const orderBody = document.getElementById("order-body");
@@ -90,7 +90,7 @@
   const customerBody = document.getElementById("customer-body");
 
   try {
-    const res = await fetch(localUrl);
+    const res = await fetch(url);
     const customerCount = document.getElementById("customer-count");
     const customers = await res.json();
 

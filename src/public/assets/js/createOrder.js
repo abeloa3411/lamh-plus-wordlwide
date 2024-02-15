@@ -5,6 +5,7 @@ createBtn.addEventListener("click", createOrder);
 const url = "https://lamhplusworldwide.onrender.com/api/v1/orders";
 const localUrl = "/api/v1/orders";
 const localUrlCustomer = "/api/v1/customer";
+const urlcustomer = "https://lamhplusworldwide.onrender.com/api/v1/customer";
 //create an order
 async function createOrder() {
   //   select elements
@@ -74,7 +75,7 @@ async function createOrder() {
   }
 
   try {
-    await fetch(localUrl, {
+    await fetch(url, {
       method: "post",
       headers: new Headers({ "Content-Type": "application/json" }),
       body: JSON.stringify({
@@ -137,7 +138,7 @@ async function createCustomer() {
   }
 
   try {
-    await fetch(localUrlCustomer, {
+    await fetch(urlcustomer, {
       method: "post",
       headers: new Headers({ "Content-Type": "application/json" }),
       body: JSON.stringify({
