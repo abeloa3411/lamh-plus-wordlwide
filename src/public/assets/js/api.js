@@ -16,6 +16,7 @@
     const loadedOrders = orders
       .map((order) => {
         const {
+          _id,
           name,
           shipperCity,
           orderNo,
@@ -67,9 +68,7 @@
                           <p>${state}</>
                         </td>
                         <td class="align-middle text-center">
-                          <a href="#" class="btn btn-outline-primary"
-                            >Cancel Order</a
-                          >
+                          <a href="#" class="btn btn-outline-primary" id="cancel-btn" data-id="${_id}">Cancel Order</a>
                         </td>
             </tr>
     
@@ -78,6 +77,15 @@
       .join("");
 
     orderBody.innerHTML = loadedOrders;
+
+    const cancelBtn = document.querySelectorAll("#cancel-btn");
+
+    cancelBtn.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.getAttribute("data-id");
+        deleteOrder(id);
+      });
+    });
   } catch (error) {
     console.log(error);
   }
@@ -135,3 +143,19 @@
     console.log(error);
   }
 })();
+
+function deleteOrder(id) {
+  const url = `/api/v1/orders/${id}`;
+
+  fetch(url, {
+    method: "DELETE",
+  })
+    .then((res) => {
+      if (res.ok) {
+        alert("Order Canceled");
+        window.location.reload();
+      }
+      return;
+    })
+    .catch((error) => console.log(error));
+}

@@ -120,9 +120,9 @@ export async function createOder(req, res) {
 export async function deleteOrder(req, res) {
   const { id } = req.params;
   try {
-    await Order.findByIdAndDelete({ _id: id });
+    await Order.findOneAndDelete({ _id: id });
 
-    req.status(200).json({ msg: "Deleted" });
+    res.status(200).json({ msg: "Deleted" });
   } catch (error) {
     res.status(400).json({ err: error.message });
   }
