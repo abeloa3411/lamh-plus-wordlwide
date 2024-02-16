@@ -177,10 +177,10 @@
                 class="breadcrumb-item text-sm text-dark active"
                 aria-current="page"
               >
-                Tables
+                Enquiries
               </li>
             </ol>
-            <h6 class="font-weight-bolder mb-0">Tables</h6>
+            <h6 class="font-weight-bolder mb-0">Enquiries</h6>
           </nav>
           <div
             class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
@@ -474,6 +474,10 @@
         };
         Scrollbar.init(document.querySelector("#sidenav-scrollbar"), options);
       }
+
+      const nameTag = document.getElementById("name-tag");
+
+      nameTag.innerHTML = sessionStorage.getItem("user");
     </script>
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

@@ -17,25 +17,23 @@ export async function createCustomer(req, res) {
     throw Error("Please fill in all fields");
   }
 
-  const exists = await Customer.find({ email });
+  const exists = await Customer.find({ email: email });
 
-  if (exists) {
-    throw Error("User Already exist");
-  }
+  if ((exists.length = 0)) {
+    try {
+      const customer = new Customer({
+        customerNo: "C" + Math.floor(Math.random() * 90000),
+        name,
+        address,
+        contact,
+        email,
+      });
 
-  try {
-    const customer = new Customer({
-      customerNo: "C" + Math.floor(Math.random() * 90000),
-      name,
-      address,
-      contact,
-      email,
-    });
+      const isSaved = await customer.save();
 
-    const isSaved = await customer.save();
-
-    res.status(200).json({ isSaved, msg: "Success" });
-  } catch (error) {
-    res.status(400).json({ err: error.message });
+      res.status(200).json({ isSaved, msg: "Success" });
+    } catch (error) {
+      res.status(400).json({ err: error.message });
+    }
   }
 }

@@ -25,7 +25,8 @@ document
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Authentication failed");
+          alert("Authentication failed");
+          window.location.href = "index.html";
         }
         return response.json();
       })

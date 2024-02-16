@@ -92,13 +92,13 @@
 })();
 
 (async function getustomers() {
-  const url = "https://lamhplusworldwide.onrender.com/api/v1/orders";
+  const url = "https://lamhplusworldwide.onrender.com/api/v1/customer";
   const localUrl = "/api/v1/customer";
 
   const customerBody = document.getElementById("customer-body");
 
   try {
-    const res = await fetch(url);
+    const res = await fetch(localUrl);
     const customerCount = document.getElementById("customer-count");
     const customers = await res.json();
 

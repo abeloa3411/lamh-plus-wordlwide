@@ -108,10 +108,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link text-white active bg-gradient-primary"
-              href="../pages/notifications.html"
-            >
+            <a class="nav-link text-white" href="../pages/notifications.html">
               <div
                 class="text-white text-center me-2 d-flex align-items-center justify-content-center"
               >
@@ -152,7 +149,7 @@
               <div
                 class="text-white text-center me-2 d-flex align-items-center justify-content-center"
               >
-                <i class="material-icons opacity-10">assignment</i>
+                <i class="material-icons opacity-10">logout</i>
               </div>
               <span class="nav-link-text ms-1">Sign Up</span>
             </a>
@@ -181,10 +178,10 @@
                 class="breadcrumb-item text-sm text-dark active"
                 aria-current="page"
               >
-                Create Order
+                Create Customer
               </li>
             </ol>
-            <h6 class="font-weight-bolder mb-0">Create Order</h6>
+            <h6 class="font-weight-bolder mb-0">Create Customer</h6>
           </nav>
           <div
             class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
@@ -246,7 +243,7 @@
         <div class="row">
           <div class="card card-plain">
             <div class="card-header">
-              <h4 class="font-weight-bolder">Add an Order</h4>
+              <h4 class="font-weight-bolder">Create Customer</h4>
             </div>
             <div class="card-body">
               <div class="card-header">
@@ -282,326 +279,16 @@
                     </div>
                   </div>
                 </div>
-                <a
-                  href="../pages/create-customer.html"
-                  id="create-customer-btn"
-                >
-                  <button
-                    type="button"
-                    class="btn btn-lg bg-gradient-success btn-lg mt-4 mb-2"
-                  >
-                    Add customer
-                  </button>
-                </a>
 
-                <hr class="horizontal dark my-4" />
-
-                <div class="row">
-                  <div class="col">
-                    <div>
-                      <h5>Shipper Details</h5>
-                    </div>
-                    <div class="row input-group input-group-outline mb-3">
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Shippers Name</label>
-                          <input
-                            type="text"
-                            id="shippers-name"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Shippes Company</label>
-                          <input
-                            type="text"
-                            id="shippers-company"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row input-group input-group-outline mb-3">
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label"> Shippers Phone no.</label>
-                          <input
-                            type="text"
-                            id="shippers-phone"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Address</label>
-                          <input
-                            type="text"
-                            id="shippers-address"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row input-group input-group-outline mb-3">
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Shippers city</label>
-                          <input
-                            type="text"
-                            id="shippers-city"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Zip code</label>
-                          <input
-                            type="text"
-                            id="shippers-zip-code"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row input-group input-group-outline mb-3">
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Shippers Country</label>
-                          <input
-                            type="text"
-                            id="shippers-country"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Shippers email</label>
-                          <input
-                            type="text"
-                            id="shippers-email"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <button
-                      type="button"
-                      class="btn btn-lg bg-gradient-success btn-lg mt-4 mb-2"
-                      id="add-to-address"
-                    >
-                      Add to adress book
-                    </button>
-                  </div>
-                  <div class="col">
-                    <div>
-                      <h5>Recipient Details</h5>
-                    </div>
-                    <div class="row input-group input-group-outline mb-3">
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Recipient Name</label>
-                          <input
-                            type="text"
-                            id="recipient-name"
-                            class="form-control"
-                            required="true"
-                          />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Recipient Company</label>
-                          <input
-                            type="text"
-                            id="recipient-company"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row input-group input-group-outline mb-3">
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label"> Recipient Phone no.</label>
-                          <input
-                            type="text"
-                            id="recipient-phone"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Address</label>
-                          <input
-                            type="text"
-                            id="recipient-address"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row input-group input-group-outline mb-3">
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Recipient city</label>
-                          <input
-                            type="text"
-                            id="recipient-city"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Zip code</label>
-                          <input
-                            type="text"
-                            id="recipient-zip-code"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row input-group input-group-outline mb-3">
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Recipient Country</label>
-                          <input
-                            type="text"
-                            id="recipient-country"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="input-group input-group-outline mb-3">
-                          <label class="form-label">Recipient email</label>
-                          <input
-                            type="text"
-                            id="recipient-email"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <button
-                      type="button"
-                      class="btn btn-lg bg-gradient-success btn-lg mt-4 mb-2"
-                      id="add-to-address"
-                    >
-                      Add to adress book
-                    </button>
-                  </div>
-                </div>
-
-                <hr class="horizontal dark my-4" />
-
-                <div class="col">
-                  <div>
-                    <h5>Shipment Details</h5>
-                  </div>
-                  <div class="row input-group input-group-outline mb-3">
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Weight</label>
-                        <input type="text" id="weight" class="form-control" />
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Description</label>
-                        <input
-                          type="text"
-                          id="description"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row input-group input-group-outline mb-3">
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Cost</label>
-                        <input type="text" id="cost" class="form-control" />
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Sale</label>
-                        <input type="text" id="sale" class="form-control" />
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Value</label>
-                        <input type="text" id="value" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row input-group input-group-outline mb-3">
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Merchant</label>
-                        <input type="text" id="merchant" class="form-control" />
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Tracking No</label>
-                        <input
-                          type="number"
-                          id="tracking-no"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row input-group input-group-outline mb-3">
-                    <p>Dimensions</p>
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Length</label>
-                        <input type="text" id="length" class="form-control" />
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Width</label>
-                        <input type="text" id="width" class="form-control" />
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Height</label>
-                        <input type="text" id="height" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <hr class="horizontal dark my-4" />
 
                 <div class="text-center">
                   <button
                     type="button"
-                    class="btn btn-lg bg-gradient-success btn-lg mt-4 mb-0"
-                    id="create-btn"
+                    class="btn btn-lg bg-gradient-success btn-lg mt-4 mb-2"
+                    id="create-customer-btn"
                   >
-                    Create
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-lg bg-gradient-primary btn-lg mt-4 mb-0"
-                  >
-                    Cancel
+                    Add customer
                   </button>
                 </div>
               </form>

@@ -24,11 +24,14 @@ async function searcResult() {
   })
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Authentication failed");
+        alert("Authentication failed");
       }
       return response.json();
     })
     .then((data) => {
+      if (!data) {
+        alert("Failed to get data");
+      }
       displayData(data);
     })
     .catch((error) => {

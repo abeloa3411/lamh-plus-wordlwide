@@ -526,6 +526,10 @@
         };
         Scrollbar.init(document.querySelector("#sidenav-scrollbar"), options);
       }
+
+      const nameTag = document.getElementById("name-tag");
+
+      nameTag.innerHTML = sessionStorage.getItem("user");
     </script>
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
