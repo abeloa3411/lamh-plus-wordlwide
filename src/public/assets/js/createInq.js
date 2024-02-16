@@ -30,7 +30,7 @@ async function createInq() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        alert("Inquiry added added");
+        alert("Inquiry added");
         window.location.reload();
       });
   } catch (error) {
