@@ -1,4 +1,5 @@
 const createCustomerBtn = document.getElementById("create-customer-btn");
+const localUrl = "/api/v1/customer";
 
 createCustomerBtn.addEventListener("click", createCustomer);
 
@@ -14,7 +15,7 @@ async function createCustomer() {
     return;
   }
 
-  await fetch(localUrl, {
+  const res = await fetch(localUrl, {
     method: "post",
     headers: new Headers({ "Content-Type": "application/json" }),
     body: JSON.stringify({
@@ -23,12 +24,13 @@ async function createCustomer() {
       contact,
       address,
     }),
-  })
-    .then((res) => {
-      res.json();
-    })
-    .then(() => {
-      alert("Customer added");
-    })
-    .catch((err) => console.log(err));
+  });
+
+  if (!res.ok) {
+    alert("Customer already exists");
+    window.location.reload();
+  } else if (res.ok) {
+    alert("Customer created successfully");
+    window.location.reload();
+  }
 }
