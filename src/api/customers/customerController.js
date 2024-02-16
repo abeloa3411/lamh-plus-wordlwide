@@ -30,8 +30,19 @@ export async function createCustomer(req, res) {
 
     const isSaved = await customer.save();
 
-    res.status(200).json({ msg: "Customer created succesfully" });
+    res.status(200).json({ isSaved, msg: "Customer created succesfully" });
   } else {
     res.status(400).json({ err: "Error creating customer" });
+  }
+}
+
+export async function getSingleCustomer(req, res) {
+  const { id } = req.params;
+  try {
+    const singleCustomer = await Customer.find({ _id: id });
+
+    res.status(200).json(singleCustomer);
+  } catch (error) {
+    res.status(404).json({ err: error.message });
   }
 }

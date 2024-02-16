@@ -152,8 +152,9 @@
               <div
                 class="text-white text-center me-2 d-flex align-items-center justify-content-center"
               >
-                <i class="material-icons opacity-10">assignment</i>
+                <i class="material-icons opacity-10">logout</i>
               </div>
+
               <span class="nav-link-text ms-1">Sign Up</span>
             </a>
           </li>
@@ -252,6 +253,13 @@
               <div class="card-header">
                 <h5 class="font-weight-bolder">Customer details</h5>
               </div>
+              <select
+                class="form-select mb-4 w-20"
+                aria-label="Default select example"
+                id="select"
+              >
+                <option selected>Select customer</option>
+              </select>
               <form role="form">
                 <div class="row input-group input-group-outline mb-3">
                   <div class="col">
@@ -282,17 +290,6 @@
                     </div>
                   </div>
                 </div>
-                <a
-                  href="../pages/create-customer.html"
-                  id="create-customer-btn"
-                >
-                  <button
-                    type="button"
-                    class="btn btn-lg bg-gradient-success btn-lg mt-4 mb-2"
-                  >
-                    Add customer
-                  </button>
-                </a>
 
                 <hr class="horizontal dark my-4" />
 
@@ -803,6 +800,49 @@
       const nameTag = document.getElementById("name-tag");
 
       nameTag.innerHTML = sessionStorage.getItem("user");
+
+      //populate select
+      document.addEventListener("DOMContentLoaded", () => {
+        const selectElement = document.getElementById("select");
+        const formElements = {
+          name: document.getElementById("name"),
+          email: document.getElementById("email"),
+          contact: document.getElementById("contact"),
+          address: document.getElementById("address"),
+        };
+
+        // Fetch data from the database and populate the select options
+        fetch("/api/v1/customer")
+          .then((response) => response.json())
+          .then((data) => {
+            data.forEach((customer) => {
+              const option = document.createElement("option");
+              option.value = customer._id; // Assuming each customer has an ID
+              option.textContent = customer.name; // Assuming customer object has a name property
+              selectElement.appendChild(option);
+            });
+          })
+          .catch((error) => console.error("Error fetching data:", error));
+
+        // Event listener for select change
+        selectElement.addEventListener("change", () => {
+          const selectedCustomerId = selectElement.value;
+
+          // Fetch customer details based on selected ID
+          fetch(`/api/v1/customer/${selectedCustomerId}`)
+            .then((response) => response.json())
+            .then((customer) => {
+              // Populate form fields with retrieved customer data
+              formElements.name.value = customer[0].name;
+              formElements.email.value = customer[0].email;
+              formElements.contact.value = customer[0].contact;
+              formElements.address.value = customer[0].address;
+            })
+            .catch((error) =>
+              console.error("Error fetching customer details:", error)
+            );
+        });
+      });
     </script>
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

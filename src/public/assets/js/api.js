@@ -106,11 +106,12 @@
     const loadedCustomers = customers
       .map((customer) => {
         console.log();
-        const { name, address, contact, email, customerNo } = customer;
+        const { _id, name, address, contact, email, customerNo } = customer;
 
         return `
               <tr>
-                        <td>
+              
+                      <td>
                           <div class="d-flex px-2 py-1">
                             <div
                               class="d-flex flex-column justify-content-center"
@@ -133,7 +134,10 @@
                         <td class="align-middle text-center">
                           <p>${contact}</p>
                         </td>
-                      </tr>
+                      <td class="align-middle text-center">
+                          <a href="../pages/details/customer-details.html?=${_id}">Details</p>
+                        </td>
+              </tr>
        `;
       })
       .join("");
@@ -147,15 +151,17 @@
 function deleteOrder(id) {
   const url = `/api/v1/orders/${id}`;
 
-  fetch(url, {
-    method: "DELETE",
-  })
-    .then((res) => {
-      if (res.ok) {
-        alert("Order Canceled");
-        window.location.reload();
-      }
-      return;
+  if (confirm("Cancel Order")) {
+    fetch(url, {
+      method: "DELETE",
     })
-    .catch((error) => console.log(error));
+      .then((res) => {
+        if (res.ok) {
+          alert("Order Canceled");
+          window.location.reload();
+        }
+        return;
+      })
+      .catch((error) => console.log(error));
+  }
 }
