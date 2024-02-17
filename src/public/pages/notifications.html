@@ -975,6 +975,113 @@
             recipient[0].company;
         }
       });
+
+      const addShipperBtn = document.getElementById("add-shipper");
+      const addRecipetntBtn = document.getElementById("add-recipient");
+
+      addShipperBtn.addEventListener(
+        "click",
+
+        async () => {
+          const localUrl = "/api/v1/shipper";
+
+          const name = document.getElementById("shippers-name").value;
+          const email = document.getElementById("shippers-email").value;
+          const phone = document.getElementById("shippers-phone").value;
+          const city = document.getElementById("shippers-address").value;
+          const country = document.getElementById("shippers-name").value;
+          const company = document.getElementById("shippers-email").value;
+          const zipcode = document.getElementById("shippers-zip-code").value;
+          const address = document.getElementById("shippers-address").value;
+
+          if (
+            !name ||
+            !email ||
+            !phone ||
+            !city ||
+            !country ||
+            !company ||
+            !zipcode ||
+            !address
+          ) {
+            alert("Add all shipper fields");
+            return;
+          }
+
+          const res = await fetch(localUrl, {
+            method: "post",
+            headers: new Headers({ "Content-Type": "application/json" }),
+            body: JSON.stringify({
+              name,
+              email,
+              phone,
+              city,
+              country,
+              company,
+              zipcode,
+              address,
+            }),
+          });
+
+          if (!res.ok) {
+            alert("Shipper already exists");
+          } else if (res.ok) {
+            alert("Shipper created successfully");
+          }
+        }
+      );
+
+      addRecipetntBtn.addEventListener(
+        "click",
+
+        async () => {
+          const localUrl = "/api/v1/recipient";
+
+          const name = document.getElementById("recipient-name").value;
+          const email = document.getElementById("recipient-email").value;
+          const phone = document.getElementById("recipient-phone").value;
+          const city = document.getElementById("recipient-address").value;
+          const country = document.getElementById("recipient-name").value;
+          const company = document.getElementById("recipient-email").value;
+          const zipcode = document.getElementById("recipient-zip-code").value;
+          const address = document.getElementById("recipient-address").value;
+
+          if (
+            !name ||
+            !email ||
+            !phone ||
+            !city ||
+            !country ||
+            !company ||
+            !zipcode ||
+            !address
+          ) {
+            alert("Add all shipper fields");
+            return;
+          }
+
+          const res = await fetch(localUrl, {
+            method: "post",
+            headers: new Headers({ "Content-Type": "application/json" }),
+            body: JSON.stringify({
+              name,
+              email,
+              phone,
+              city,
+              country,
+              company,
+              zipcode,
+              address,
+            }),
+          });
+
+          if (!res.ok) {
+            alert("Recipient already exists");
+          } else if (res.ok) {
+            alert("Recipient created successfully");
+          }
+        }
+      );
     </script>
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
