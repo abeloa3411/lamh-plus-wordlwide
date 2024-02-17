@@ -5,6 +5,8 @@ import orders from "./api/orders/orderRoutes.js";
 import customers from "./api/customers/customerRoute.js";
 import auth from "./api/auth/authRoute.js";
 import inquiries from "./api/inquiries/inquiryRoute.js";
+import shippers from "./api/shippers/shipperRoute.js";
+import recipients from "./api/recipients/recipentRoute.js";
 import cors from "cors";
 
 dotenv.config();
@@ -21,6 +23,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/v1/orders", orders);
 app.use("/api/v1/customer", customers);
 app.use("/api/v1/inquiries", inquiries);
+app.use("/api/v1/shipper", shippers);
+app.use("/api/v1/recipient", recipients);
 app.use("/api/v1/auth", auth);
 
 app.use(express.static(path.join(__dirname, "src", "public")));

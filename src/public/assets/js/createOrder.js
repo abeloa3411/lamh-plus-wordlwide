@@ -112,7 +112,6 @@ async function createOrder() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         alert("Order Added Successfully");
         window.location.reload();
       });

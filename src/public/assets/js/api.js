@@ -105,7 +105,6 @@
     customerCount.innerHTML = customers.length + " customers";
     const loadedCustomers = customers
       .map((customer) => {
-        console.log();
         const { _id, name, address, contact, email, customerNo } = customer;
 
         return `

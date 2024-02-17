@@ -29,7 +29,6 @@ async function createInq() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         alert("Inquiry added");
         window.location.reload();
       });
