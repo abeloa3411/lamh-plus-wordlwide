@@ -1025,8 +1025,10 @@
 
           if (!res.ok) {
             alert("Shipper already exists");
+            window.location.reload();
           } else if (res.ok) {
             alert("Shipper created successfully");
+            window.location.reload();
           }
         }
       );
@@ -1077,8 +1079,10 @@
 
           if (!res.ok) {
             alert("Recipient already exists");
+            window.location.reload();
           } else if (res.ok) {
             alert("Recipient created successfully");
+            window.location.reload();
           }
         }
       );
